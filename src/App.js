@@ -6,11 +6,13 @@ import Palette from './components/Palette';
 
 // Utilities
 import seedColors from "./seedColors";
+import { generatePalette } from "./colorHelpers";
 
 const App = () => {
+  console.log(generatePalette(seedColors[4]))
   return (
     <div className="App">
-      <Palette {...seedColors[3]} />
+      <Palette {...seedColors[0]} />
     </div>
   );
 }
