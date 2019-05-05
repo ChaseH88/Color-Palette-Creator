@@ -37,11 +37,11 @@ const Palette = (props) => {
   }
 
   const colorBoxes = props.palette.colors[level].map(c => (
-    <ColorBox background={c[format]} name={c.name} key={c.id} colorId={c.id} paletteId={props.palette.id} />
+    <ColorBox background={c[format]} name={c.name} key={c.id} colorId={c.id} paletteId={props.palette.id} showLink={true} />
   ))
   return (
     <PaletteWrap>
-      <NavBar level={level} changeLevel={changeLevel} handleChange={changeFormat} />
+      <NavBar level={level} changeLevel={changeLevel} handleChange={changeFormat} allColors={true} />
       <ColorBoxesWrapper className="colors">
         {colorBoxes}
       </ColorBoxesWrapper>

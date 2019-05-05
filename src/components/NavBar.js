@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import chroma from "chroma-js";
 import { Link } from "react-router-dom";
 
 // Components
@@ -24,7 +25,7 @@ const NavBarComponent = (props) => {
   const [open, setOpen] = useState(false);
 
   // Props
-  const { level, changeLevel } = props;
+  const { level, changeLevel, allColors } = props;
 
   // Format Change
   const handleChange = (e) => {
@@ -38,17 +39,30 @@ const NavBarComponent = (props) => {
     setOpen(false);
   }
 
+  // Dynamic Header and Footer background colors
+  let newLevel = level * 0.006;
+  let lumColor = chroma("#171719").brighten(newLevel).hex();
+  const getLum = (lev) => {
+    if(lev > 3.5){
+      return "dark"
+    } else {
+      return "light"
+    }
+  }
+
   // Render
   return(
-    <NavBar>
+    <NavBar style={{background: lumColor}} className={getLum(newLevel)}>
       <div className="container">
         <div id="logo">
           <Link to="/">Home</Link>
         </div>
-        <div id="slider">
-          <span>Level: {level}</span>
-          <Slider defaultValue={level} min={100} max={900} onChange={changeLevel} step={100} />
-        </div>
+        {allColors && (
+          <div id="slider">
+            <span>Level: {level}</span>
+            <Slider defaultValue={level} min={100} max={900} onChange={changeLevel} step={100} />
+          </div>
+        )}
         <div id="select">
           <Select value={format} onChange={handleChange}>
             <MenuItem value="hex">HEX - #ffffff</MenuItem>

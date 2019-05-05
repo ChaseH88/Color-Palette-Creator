@@ -10,6 +10,9 @@ const ColorBoxWrap = styled.div`
     left: 3px;
     font-size: 12px;
   }
+  &.light div.boxContent {
+    color: #fff
+  }
   /* ---Box Content--- */
   & a.more {
     position: absolute;
@@ -74,11 +77,15 @@ const CopyMessage = styled.div`
   opacity: 0;
   transform: scale(0);
   transition: transform 200ms ease-in-out;
+  &.dark div {
+    color: #252525 !important
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.7), 1px -1px 0 rgba(255, 255, 255, 0.7), -1px 1px 0 rgba(255, 255, 255, 0.7), 1px 1px 0 rgba(255, 255, 255, 0.7);
+  }
   & div {
     text-align: center;
     color: #fff;
     font-size: 4vw;
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.7), 1px -1px 0 rgba(0, 0, 0, 0.7), -1px 1px 0 rgba(0, 0, 0, 0.7), 1px 1px 0 rgba(0, 0, 0, 0.7)
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.7), 1px -1px 0 rgba(0, 0, 0, 0.7), -1px 1px 0 rgba(0, 0, 0, 0.7), 1px 1px 0 rgba(0, 0, 0, 0.7);
   }
   & div h2 {
     color: inherit;
