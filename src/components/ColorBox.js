@@ -31,7 +31,7 @@ const ColorBox = (props) => {
           </div>
           <button>Copy</button>
         </div>
-        <a className="more" href="/   ">See More</a>
+        <a className="more" href="/">More</a>
       </ColorBoxWrap>
     </CopyToClipboard>
   );
