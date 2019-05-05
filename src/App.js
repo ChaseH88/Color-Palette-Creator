@@ -9,6 +9,9 @@ import Palette from './components/Palette';
 import seedColors from "./seedColors";
 import { generatePalette } from "./colorHelpers";
 
+// Component
+import PaletteList from './components/PaletteList';
+
 const App = () => {
 
   // Grab the correct palette
@@ -22,7 +25,7 @@ const App = () => {
   return (
     <Fragment>
       <Switch>
-        <Route exact path="/" render={()=> <h1>Home Page!!!</h1>} />
+        <Route exact path="/" render={()=> <PaletteList palettes={seedColors} />} />
         <Route exact path="/palette/:id" render={routeProps => (
           <Palette palette={generatePalette(getPalette(routeProps.match.params.id))} />
         )} />

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 
 // Components
 import { NavBar } from "./styled-components/NavBar"
@@ -43,7 +43,7 @@ const NavBarComponent = (props) => {
     <NavBar>
       <div className="container">
         <div id="logo">
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </div>
         <div id="slider">
           <span>Level: {level}</span>
