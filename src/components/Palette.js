@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
-
-
 
 // Components
 import ColorBox from './ColorBox';
+import NavBar from './NavBar';
 
 const PaletteWrap = styled.div`
   height: 100vh;
@@ -14,12 +13,26 @@ const PaletteWrap = styled.div`
 `;
 
 const Palette = (props) => {
-  const colorBoxes = props.colors.map(c => (
-    <ColorBox background={c.color} name={c.name} />
+
+  // State
+  const [level, setLevel] = useState(500);
+  const [format, setFormat] = useState("hex");
+
+  const changeLevel = (l) => {
+    setLevel(l)
+    console.log(level)
+  }
+
+  const changeFormat = (format) => {
+    setFormat(format);
+  }
+
+  const colorBoxes = props.palette.colors[level].map(c => (
+    <ColorBox background={c[format]} name={c.name} />
   ))
   return (
     <PaletteWrap>
-    {/* Nav bar here */}
+      <NavBar level={level} changeLevel={changeLevel} handleChange={changeFormat} />
       <div className="colors">
         {colorBoxes}
       </div>
