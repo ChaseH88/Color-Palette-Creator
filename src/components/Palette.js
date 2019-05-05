@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
-import styled from "styled-components";
 
 // Components
+import { PaletteWrap } from "./styled-components/Palette"
 import ColorBox from './ColorBox';
 import NavBar from './NavBar';
-
-const PaletteWrap = styled.div`
-  height: 100vh;
-  & .colors {
-    height: 90%;
-  }
-`;
+import Footer from './Footer';
 
 const Palette = (props) => {
 
@@ -20,7 +14,6 @@ const Palette = (props) => {
 
   const changeLevel = (l) => {
     setLevel(l)
-    console.log(level)
   }
 
   const changeFormat = (format) => {
@@ -28,7 +21,7 @@ const Palette = (props) => {
   }
 
   const colorBoxes = props.palette.colors[level].map(c => (
-    <ColorBox background={c[format]} name={c.name} />
+    <ColorBox background={c[format]} name={c.name} key={c.id} />
   ))
   return (
     <PaletteWrap>
@@ -36,7 +29,7 @@ const Palette = (props) => {
       <div className="colors">
         {colorBoxes}
       </div>
-      {/* footer here */}
+      <Footer paletteName={props.palette.name} emoji={props.palette.emoji} />
     </PaletteWrap>
   );
 }
