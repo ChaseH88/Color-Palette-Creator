@@ -17,6 +17,11 @@ const PaletteListComponent = (props) => {
   
   // Grab the props
   const { palettes } = props;
+
+  const goToPalette = (id) => {
+    props.history.push(`/palette/${id}`);
+  }
+
   return(
     <Fragment>
       <div className="container">
@@ -26,9 +31,7 @@ const PaletteListComponent = (props) => {
         </div>
         <PaletteList className="palettes">
           {palettes.map(palette => (
-            <Link to={`/palette/${palette.id}`}>
-              <MiniPalette {...palette} />
-            </Link>
+            <MiniPalette {...palette} handleClick={()=> goToPalette(palette.id)} />
           ))}
         </PaletteList>
       </div>

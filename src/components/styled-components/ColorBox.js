@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
 const ColorBoxWrap = styled.div`
-  width: 20%;
-  height: 25%;
-  margin: 0 auto;
-  display: inline-block;
   position: relative;
   cursor: pointer;
   /* ---Box Content--- */
@@ -60,14 +56,14 @@ const Overlay = styled.div`
   &.show {
     opacity: 1;
     transform: scale(50);
-    z-index: 1000;
+    z-index: 10000;
     position: absolute;
   }
 `;
 
 const CopyMessage = styled.div`
   position: fixed;
-  z-index: 2000;
+  z-index: 10001;
   left: 0;
   right: 0;
   bottom: 0;

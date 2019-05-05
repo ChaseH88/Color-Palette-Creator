@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { Link } from "react-router-dom";
 
 // Styled Component
 import { ColorBoxWrap, Overlay, CopyMessage } from "./styled-components/ColorBox";
@@ -7,7 +8,7 @@ import { ColorBoxWrap, Overlay, CopyMessage } from "./styled-components/ColorBox
 const ColorBox = (props) => {
   // State
   const [copied, setCopied] = useState(false);
-  const { background, name } = props;
+  const { background, name, colorId, paletteId } = props;
   
   const changeCopyState =() => {
     setCopied(true);
@@ -31,7 +32,7 @@ const ColorBox = (props) => {
           </div>
           <button>Copy</button>
         </div>
-        <a className="more" href="/">More</a>
+        <Link to={`/palette/${paletteId}/${colorId}`} onClick={e => e.stopPropagation()} className="more">More</Link>
       </ColorBoxWrap>
     </CopyToClipboard>
   );
