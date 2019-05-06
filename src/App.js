@@ -15,7 +15,6 @@ const App = () => {
 
   // Grab the correct palette
   const getPalette = (id) => {
-    console.log(id)
     return seedColors.find(function(palette) {
       return palette.id === id;
     });

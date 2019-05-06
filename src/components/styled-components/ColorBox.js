@@ -78,7 +78,7 @@ const CopyMessage = styled.div`
   transform: scale(0);
   transition: transform 200ms ease-in-out;
   &.dark div {
-    color: #252525 !important
+    color: #252525 !important;
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.7), 1px -1px 0 rgba(255, 255, 255, 0.7), -1px 1px 0 rgba(255, 255, 255, 0.7), 1px 1px 0 rgba(255, 255, 255, 0.7);
   }
   & div {

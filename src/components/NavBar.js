@@ -18,6 +18,9 @@ import Snackbar from "@material-ui/core/Snackbar";
 import CloseIcon from "@material-ui/icons/Close";
 import { IconButton } from "@material-ui/core";
 
+// Utilities
+import { getLum } from "../extras/getLum";
+
 const NavBarComponent = (props) => {
 
   // State
@@ -42,13 +45,6 @@ const NavBarComponent = (props) => {
   // Dynamic Header and Footer background colors
   let newLevel = level * 0.006;
   let lumColor = chroma("#171719").brighten(newLevel).hex();
-  const getLum = (lev) => {
-    if(lev > 3.5){
-      return "dark"
-    } else {
-      return "light"
-    }
-  }
 
   // Render
   return(

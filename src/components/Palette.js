@@ -45,7 +45,7 @@ const Palette = (props) => {
       <ColorBoxesWrapper className="colors">
         {colorBoxes}
       </ColorBoxesWrapper>
-      <Footer paletteName={props.palette.name} emoji={props.palette.emoji} />
+      <Footer level={level} paletteName={props.palette.name} emoji={props.palette.emoji} />
     </PaletteWrap>
   );
 }

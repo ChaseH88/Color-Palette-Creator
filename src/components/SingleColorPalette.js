@@ -63,9 +63,8 @@ const SingleColor = (props) => {
 
   shades = gatherShades(palette, colorId);
   const colorBoxes = shades.map(c => (
-    <ColorBox background={c[format]} name={c.name} key={c.id} colorId={c.id} paletteId={props.palette.id} showLink={false} />
+    <ColorBox background={c[format]} name={c.name} key={c.name.replace(" ", "")} colorId={c.id} paletteId={props.palette.id} showLink={false} />
   ));
-    console.log(props)
   return(
     <div style={{height: "100vh"}}>
       <NavBar handleChange={changeFormat} allColors={false} />
