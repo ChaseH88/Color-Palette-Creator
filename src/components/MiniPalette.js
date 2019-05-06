@@ -37,7 +37,7 @@ const MiniPalette = styled.div`
 `;
 
 const MiniPaletteComponent = (props) => {
-  const { paletteName, emoji, colors, handleClick, id } = props;
+  const { paletteName, emoji, colors, handleClick } = props;
   const miniColorBoxes = colors.map(color => (
     <div className="miniColor" style={{ background: color.color }}></div>
   ))
